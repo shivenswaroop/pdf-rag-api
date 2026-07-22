@@ -1,0 +1,10 @@
+#!/bin/sh
+# Strip Cursor co-author trailers so they never appear on GitHub.
+MSG_FILE="$1"
+if [ -z "$MSG_FILE" ] || [ ! -f "$MSG_FILE" ]; then
+  exit 0
+fi
+tmp="$(mktemp)"
+grep -v -E '^Co-authored-by:[[:space:]]*Cursor[[:space:]]*<cursoragent@cursor\.com>[[:space:]]*$' "$MSG_FILE" > "$tmp"
+mv "$tmp" "$MSG_FILE"
+exit 0

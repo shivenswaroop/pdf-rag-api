@@ -29,7 +29,7 @@ User question → embed → similarity search → LLM (context-only) → answer 
 | Chunking | LangChain `RecursiveCharacterTextSplitter` (500 / 100) |
 | Embeddings | Sentence Transformers `BAAI/bge-small-en-v1.5` |
 | Vector DB | ChromaDB (persistent under `vector_db/`) |
-| LLM | OpenRouter (default model `tencent/hy3:free`) |
+| LLM | OpenRouter (default free model `openai/gpt-oss-20b:free`, with free fallbacks) |
 | Frontend | React + Vite + TypeScript |
 | Containers | Docker + Docker Compose |
 
@@ -210,7 +210,8 @@ Example out-of-doc question: *“What is the capital of France?”* (should refu
 | Variable | Description |
 |----------|-------------|
 | `OPENROUTER_API_KEY` | Required for chat (alias: `HUNYUAN_API_KEY`) |
-| `LLM_MODEL` | OpenRouter model id (default `tencent/hy3:free`) |
+| `LLM_MODEL` | OpenRouter free model id (default `openai/gpt-oss-20b:free`; must end with `:free`) |
+| `LLM_FALLBACK_MODELS` | Comma-separated free models tried on 429/404/503 |
 | `CORS_ORIGINS` | Comma-separated allowed origins |
 | `LOG_LEVEL` | Logging level (default `INFO`) |
 | `RETRIEVAL_MAX_DISTANCE` | Max Chroma distance to accept a chunk (default `1.2`) |
