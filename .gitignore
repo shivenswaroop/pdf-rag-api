@@ -1,0 +1,23 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.env
+app/services/.env
+
+storage/uploads/
+storage/documents.json
+vector_db/
+
+frontend/node_modules/
+frontend/dist/
+
+*.egg-info/
+.DS_Store
+
+# Private recording notes — keep local only
+docs/DEMO_SCRIPT.md

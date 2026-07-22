@@ -1,0 +1,11 @@
+venv
+__pycache__
+*.pyc
+.env
+.git
+frontend/node_modules
+frontend/dist
+vector_db
+storage/uploads
+*.md
+docs
